@@ -23,9 +23,7 @@ pipeline {
         }
         stage('email notification'){
             steps{
-              
-
-		emailext body: "*${currentBuild.currentResult}:* Job Name: 
+                emailext body: "*${currentBuild.currentResult}:* Job Name: 
                 ${env.JOB_NAME} || Build Number: ${env.BUILD_NUMBER}\n More 
                 information at: ${env.BUILD_URL}",
 		subject: 'nginx Build Status',
