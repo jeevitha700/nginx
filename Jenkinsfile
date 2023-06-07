@@ -10,7 +10,7 @@ pipeline {
         }
         stage( 'test'){
             steps{
-                sh 'docker run --name my_nignxcontainer3 -d -p 7000:80 my_nignx'
+                sh 'docker run --name my_nignxcontainer4 -d -p 7000:80 my_nignx'
 
             }
         }
