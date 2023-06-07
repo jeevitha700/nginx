@@ -24,12 +24,10 @@ pipeline {
         }
         stage('email notification'){
             steps{
-                   emailtext body: "*${currentBuild.currentResult}:* Job Name: 
-                   ${env.JOB_NAME} || Build Number: ${env.BUILD_NUMBER}\n More 
-                   information at: ${env.BUILD_URL}",
-		    subject: 'Declarative Pipeline Build Status',
-		    to: 'jeevithals700@gmail.com'
-            
+                 mail bcc: '', body: '''
+$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+
+Check console output at $BUILD_URL to view the results.''', cc: '', from: '', replyTo: '', subject: '\'Declarative Pipeline Build Status\'', to: 'jeevithals700@gmail.com'
             }
            
         }
