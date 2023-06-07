@@ -25,8 +25,8 @@ pipeline {
         stage('email notification'){
             steps{
 		    emailtext body: "*${currentBuild.currentResult}:* Jobname:${env.JOB_NAME} || Build Number: ${env.BUILD_NUMBER}\n More information at: ${env.BUILD_URL}",
-		subject : 'Declarative Pipeline Build Status',
-	          to : 'jeevithals700@gmail.com'
+		    subject : 'Declarative Pipeline Build Status',
+	             to : 'jeevithals700@gmail.com'
             }
         }
     }
